@@ -15,7 +15,7 @@ $height: 600px;
   margin: auto;
   width: $width;
   height: $height;
-  background: #f1f1f1;
+  background: #ccc;
   overflow: hidden;
   user-select: none;
   text-align: center;

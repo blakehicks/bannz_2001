@@ -6,5 +6,5 @@ const tl = anime.timeline({
 
 tl.add({
   targets: 'p',
-  translateX: 50,
+  translateX: 20,
 })

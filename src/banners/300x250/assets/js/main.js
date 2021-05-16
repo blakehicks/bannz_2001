@@ -4,4 +4,7 @@ const tl = anime.timeline({
   easing: 'easeInOutQuad',
 })
 
-tl.add({})
+tl.add({
+  targets: 'p',
+  scale: 2,
+})

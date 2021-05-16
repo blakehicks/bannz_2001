@@ -5,8 +5,9 @@ const readlineSync = require('readline-sync')
 const fs = require('fs')
 const jetpack = require('fs-jetpack')
 const chalk = require('chalk')
-const rename = require('rename')
 const uglify = require('uglify-js')
+const chokidar = require('chokidar')
+const watcher = chokidar.watch()
 //POSTCSS
 const cssnano = require('cssnano')
 const autoprefixer = require('autoprefixer')
@@ -209,10 +210,13 @@ async function bsTask() {
 }
 //WATCH
 async function watch() {
+  //IF FOLDER ARG SET
   if (argv.folder) {
     watchFolder = 'src/banners/' + argv.folder
     watchDir()
-  } else {
+  }
+  //IF IT AIN'T, LET'S MAKE A LIST
+  else {
     utils.getBanners()
     let index = readlineSync.keyInSelect(
       bannerList,
@@ -222,51 +226,42 @@ async function watch() {
     )
     argv.folder = bannerList[index]
     watchFolder = 'banners/' + argv.folder
+    //TRIGGER FIRST DIRECTORY LOOKVER
     watchDir()
-    figlet(argv.folder + '!', function (err, data) {
-      if (err) {
-        console.log('Something went wrong...')
-        console.dir(err)
-        return
-      }
-      console.log(data)
-    })
-    //Watch for changes and reload via BrowserSync
-    //HTML
-    fs.watchFile(watchFolder + paths.html, { interval: 1000 }, (curr, prev) => {
-      html()
-      console.log(
-        '\n' + chalk.magenta('//HTML') + ' changed. Reloading to reflect.\n'
-      )
-      browserSync.reload()
-    })
-    //CSS
-    fs.watchFile(
-      watchFolder + paths.css.source,
-      { interval: 1000 },
-      (curr, prev) => {
-        styles()
-        console.log(
-          '\n' + chalk.magenta('//CSS') + ' changed. Reloading to reflect.\n'
-        )
-        browserSync.reload()
-      }
-    )
-    //JS
-    fs.watchFile(
-      watchFolder + paths.js.source,
-      { interval: 1000 },
-      (curr, prev) => {
-        scripts()
-        console.log(
-          '\n' +
-            chalk.magenta('//JavaScript') +
-            ' changed. Reloading to reflect.\n'
-        )
-        browserSync.reload()
-      }
-    )
   }
+  //STUPID ASCII ART
+  figlet(argv.folder + '!', function (err, data) {
+    if (err) {
+      console.log('Something went wrong...')
+      console.dir(err)
+      return
+    }
+    console.log(data)
+  })
+  //WATCH FOR CHANGES, UPDATE FILES AND RELOAD VIA BROWSERSYNC
+  //HTML
+  chokidar.watch(watchFolder + paths.html).on('change', (event, path) => {
+    console.log(
+      '\n' + chalk.magenta('//HTML') + ' changed. Reloading to reflect.\n'
+    )
+    browserSync.reload()
+  })
+  //CSS
+  chokidar.watch(watchFolder + paths.css.source).on('change', (event, path) => {
+    styles()
+    console.log(
+      '\n' + chalk.magenta('//CSS') + ' changed. Reloading to reflect.\n'
+    )
+    browserSync.reload()
+  })
+  //JS
+  chokidar.watch(watchFolder + paths.js.source).on('change', (event, path) => {
+    scripts()
+    console.log(
+      '\n' + chalk.magenta('//JavaScript') + ' changed. Reloading to reflect.\n'
+    )
+    browserSync.reload()
+  })
 }
 
 //ERROR REPORTING
