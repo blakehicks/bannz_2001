@@ -6,6 +6,10 @@
   "repository": "https://github.com/blakehicks/bannz_3000.git",
   "author": "Blake Hicks <blake@blakehicks.com>",
   "license": "MIT",
+  "main": "bin/index.js",
+  "bin": {
+    "bannz": "./bin/index.js"
+  },
   "dependencies": {
     "adm-zip": "^0.5.5",
     "autoprefixer": "^10.2.5",
@@ -37,7 +41,7 @@
     "android >= 4.4"
   ],
   "scripts": {
-    "watch": "node src/_scripts/watch.js",
-    "deploy": "node src/_scripts/deploy.js"
+    "watch": "node lib/watch.js",
+    "deploy": "node lib/deploy.js"
   }
 }
