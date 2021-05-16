@@ -3,7 +3,6 @@ const fs = require('fs')
 const jetpack = require('fs-jetpack')
 const pkg = require('../../package.json')
 const AdmZip = require('adm-zip')
-const chalk = require('chalk')
 const figlet = require('figlet')
 const zipFolder = 'dist'
 let folders = []
@@ -71,10 +70,15 @@ const project = {
 function deploy() {
   utils.getFolders('src/banners')
   let tempFolder = 'dist/_ZIPPING'
-  //IF ZIP FOLDER EXISTS, REMOVE TO REPLACE
-  if (jetpack.exists(tempFolder)) {
-    jetpack.remove(tempFolder)
-  }
+  //REMOVE EVERYTHING FROM DIST FOLDER
+  let deleters = jetpack.find(zipFolder, {
+    matching: '*',
+    files: true,
+    directories: true,
+  })
+  deleters.forEach((deleter) => {
+    jetpack.remove(deleter)
+  })
   //CREATE TEMP FOLDER
   jetpack.dir(tempFolder)
   //ITERATE OVER EACH CREATIVE
@@ -84,7 +88,7 @@ function deploy() {
     jetpack.copy('src/banners/' + folder, tempFolder + '/' + folder)
     //FIND UNNECESSARY STUFF
     files = jetpack.find(tempFolder, {
-      matching: ['.DS_Store', '*.css', '*.js', '!style.css', '!main-min.js'],
+      matching: ['.DS_Store', '*.css', '*.js', '!style.css', '!*min.js'],
     })
     //DELETE UNNECESSARY STUFF
     files.forEach((file) => {
@@ -99,9 +103,18 @@ function deploy() {
       }
       console.log(data + '\n\n')
     })
+    //FINALLY ZIP AND ADD TO DIST
     let zip = new AdmZip()
     zip.addLocalFolder(tempFolder + '/' + folder)
-    jetpack.write(zipFolder + '/' + folder + '.zip', zip.toBuffer())
+    jetpack.write(
+      zipFolder +
+        '/' +
+        project.title.replace(/ /g, '_') +
+        '_' +
+        folder +
+        '.zip',
+      zip.toBuffer()
+    )
   })
   jetpack.remove(tempFolder)
 }

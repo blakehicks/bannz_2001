@@ -135,7 +135,7 @@ function scripts() {
     fs.readFileSync(watchFolder + paths.js.source, 'utf8')
   )
   fs.writeFile(
-    watchFolder + paths.js.destination + 'main-min.js',
+    watchFolder + paths.js.destination + 'main.min.js',
     result.code,
     function (err) {
       if (err) {
