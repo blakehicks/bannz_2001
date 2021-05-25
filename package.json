@@ -1,8 +1,8 @@
 {
   "name": "bannz_3000",
-  "title": "Client Name Here",
+  "title": "Bert",
   "version": "1.0.0",
-  "description": "HTML ads with anime.js and a whole lotta spunk",
+  "description": "HTML ads built a whole hell of a lot easier.",
   "repository": "https://github.com/blakehicks/bannz_3000.git",
   "author": "Blake Hicks <blake@blakehicks.com>",
   "license": "MIT",
@@ -13,6 +13,7 @@
   "dependencies": {
     "adm-zip": "^0.5.5",
     "autoprefixer": "^10.2.5",
+    "axios": "^0.21.1",
     "browser-sync": "^2.26.14",
     "chalk": "^4.1.1",
     "chokidar": "^3.5.1",
@@ -21,6 +22,7 @@
     "figlet": "^1.5.0",
     "fs-jetpack": "^4.1.0",
     "minimist": "^1.2.5",
+    "node-html-parser": "^3.3.3",
     "path": "^0.12.7",
     "pkg": "^5.1.0",
     "postcss": "^8.2.15",
