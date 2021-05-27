@@ -25,7 +25,7 @@ _Dap to [@crigger]https://github.com/crigger for the OG package this is based on
 - Use `CTRL + C` to stop process.
 
 ### bannz deploy
-\*\*Zip up vendor-ready files in `src/banners/` and output to `/dist` for sending along to vendor.
+**Zip up vendor-ready files in `src/banners/` and output to `/dist` for sending along to vendor.**
 
 - Grabs only minified and otherwise necessary files before zip to cut file size down as much as possible.
 
