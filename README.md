@@ -18,8 +18,8 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 
 **Perform initial setup.**
 
-- Set client name
-- Choose animation library ([GSAP](https://greensock.com/docs/v3) or [Anime.js](https://animejs.com/documentation/))
+- Set client name.
+- Choose animation library ([GSAP](https://greensock.com/docs/v3) or [Anime.js](https://animejs.com/documentation/)) and insert CDN link into template HTML.
 - Initialize your first ad creative based on whatever size you feel like starting with.
 
 ### bannz watch
