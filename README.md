@@ -1,19 +1,19 @@
 # bannz_3000
 
-#HTML Banner Package for the Yeare of Oure Lourde Three Thousande
+## HTML Banner Package for the Yeare of Oure Lourde Three Thousande
 _Dap to [@crigger]https://github.com/crigger for the OG package this is based on._
 
 ---
 
-##Commands
-###bannz setup
+## Commands
+### bannz setup
 **Perform initial setup.**
 
 - Set client name
 - Choose animation library (GSAP or Anime.js)
 - Initialize your first ad creative based on whatever size you feel like starting with.
 
-###bannz watch
+### bannz watch
 **Choose creative to watch for changes and show in browser.**
 
 - Lists all existing ad creatives in `src/banners/` that are properly denoted with size names.
@@ -24,10 +24,10 @@ _Dap to [@crigger]https://github.com/crigger for the OG package this is based on
 - Add arg `--folder <creative name here>` to skip selection process and target specific ad.
 - Use `CTRL + C` to stop process.
 
-###bannz deploy
+### bannz deploy
 \*\*Zip up vendor-ready files in `src/banners/` and output to `/dist` for sending along to vendor.
 
 - Grabs only minified and otherwise necessary files before zip to cut file size down as much as possible.
 
-###bannz help
+### bannz help
 **See most of the above information in your terminal.**
