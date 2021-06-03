@@ -14,7 +14,7 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 
 ## Commands
 
-### `yarn bannz setup` or `npm bannz setup`
+### `yarn bannz setup` or `npm run bannz setup`
 
 **Perform initial setup.**
 
@@ -22,7 +22,7 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 - Choose animation library ([GSAP](https://greensock.com/docs/v3) or [Anime.js](https://animejs.com/documentation/)) and insert CDN link into template HTML.
 - Initialize your first ad creative based on whatever size you feel like starting with.
 
-### `yarn bannz watch` or `npm bannz watch`
+### `yarn bannz watch` or `npm run bannz watch`
 
 **Choose creative to watch for changes and show in browser.**
 
@@ -34,12 +34,12 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 - Add arg `--folder <creative name here>` to skip selection process and target specific ad.
 - Use `CTRL + C` to stop process.
 
-### `yarn bannz deploy` or `npm bannz deploy`
+### `yarn bannz deploy` or `npm run bannz deploy`
 
 **Zip up vendor-ready files in `src/banners/` and output to `/dist` for sending along to vendor.**
 
 - Grabs only minified and otherwise necessary files before zip to cut file size down as much as possible.
 
-### `yarn bannz -h` or `npm bannz -h`
+### `yarn bannz -h` or `npm run bannz -h`
 
 **See most of the above information in your terminal.**
