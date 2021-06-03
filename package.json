@@ -4,8 +4,15 @@
   "version": "1.0.0",
   "description": "HTML ads built a whole hell of a lot easier.",
   "repository": "https://github.com/blakehicks/bannz_3000.git",
+  "homepage": "https://github.com/blakehicks/bannz_3000#readme",
   "author": "Blake Hicks <blake@blakehicks.com>",
   "license": "MIT",
+  "keywords": [
+    "banners",
+    "digital ads",
+    "banner ads"
+  ],
+  "bugs": "https://github.com/blakehicks/bannz_3000/issues",
   "main": "./bin/index.js",
   "bin": {
     "bannz": "./bin/index.js"
