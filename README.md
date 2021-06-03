@@ -10,7 +10,7 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 
 - Open Terminal, `cd` to desired location, then `git clone https://github.com/blakehicks/bannz_3000.git` to grab repo.
 - Switch to directory with `cd bannz_3000` (feel free to change name first to be more descriptive if desired).
-- `npm install` or `yarn install` to get dependencies.
+- `yarn` or `npm install` to get dependencies.
 
 ## Commands
 
