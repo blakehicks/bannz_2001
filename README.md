@@ -8,6 +8,8 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 
 ## Installation
 
+_This is for cloning directly from repository. You can also use command line tools with [create-bannz](https://github.com/blakehicks/create-bannz)._
+
 - Open Terminal, `cd` to desired location, then `git clone https://github.com/blakehicks/bannz_3000.git` to grab repo.
 - Switch to directory with `cd bannz_3000` (feel free to change name first to be more descriptive if desired).
 - `yarn` or `npm install` to get dependencies.
