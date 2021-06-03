@@ -20,7 +20,38 @@
     <script data-lib src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/main.min.js"></script>
     <script>
-      var clickTag = "";
+      // Broadcast Events shim
+      ;(function () {
+        if (typeof window.CustomEvent === 'function') {
+          return false
+        }
+
+        function CustomEvent(event, params) {
+          params = params || {
+            bubbles: false,
+            cancelable: false,
+            detail: undefined,
+          }
+          var evt = document.createEvent('CustomEvent')
+          evt.initCustomEvent(
+            event,
+            params.bubbles,
+            params.cancelable,
+            params.detail
+          )
+          return evt
+        }
+
+        CustomEvent.prototype = window.Event.prototype
+        window.CustomEvent = CustomEvent
+      })()
+
+      function doClickTag() {
+        window.open(window.clickTag)
+      }
+
+      document.getElementById('ad').addEventListener('click', doClickTag)
+      var clickTag = ''
     </script>
   </body>
 </html>

@@ -1,12 +1,12 @@
 {
   "name": "bannz_3000",
-  "title": "Randy",
+  "title": "Client Name Here",
   "version": "1.0.0",
   "description": "HTML ads built a whole hell of a lot easier.",
   "repository": "https://github.com/blakehicks/bannz_3000.git",
   "author": "Blake Hicks <blake@blakehicks.com>",
   "license": "MIT",
-  "main": "bin/index.js",
+  "main": "./bin/index.js",
   "bin": {
     "bannz": "./bin/index.js"
   },
