@@ -1,6 +1,6 @@
 {
   "name": "bannz_3000",
-  "title": "Client Name Here",
+  "title": "Derek",
   "version": "1.0.0",
   "description": "HTML ads built a whole hell of a lot easier.",
   "repository": "https://github.com/blakehicks/bannz_3000.git",
@@ -14,7 +14,7 @@
   ],
   "bugs": "https://github.com/blakehicks/bannz_3000/issues",
   "main": "./bin/index.js",
-  "bin": {
+  "scripts": {
     "bannz": "./bin/index.js"
   },
   "dependencies": {

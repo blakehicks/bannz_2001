@@ -11,11 +11,10 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 - Open Terminal, `cd` to desired location, then `git clone https://github.com/blakehicks/bannz_3000.git` to grab repo.
 - Switch to directory with `cd bannz_3000` (feel free to change name first to be more descriptive if desired).
 - `npm install` or `yarn install` to get dependencies.
-- `npm link` or `yarn link` to set up commands (temp fix, not ideal right yet—may screw up client names).
 
 ## Commands
 
-### bannz setup
+### `yarn bannz setup` or `npm bannz setup`
 
 **Perform initial setup.**
 
@@ -23,7 +22,7 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 - Choose animation library ([GSAP](https://greensock.com/docs/v3) or [Anime.js](https://animejs.com/documentation/)) and insert CDN link into template HTML.
 - Initialize your first ad creative based on whatever size you feel like starting with.
 
-### bannz watch
+### `yarn bannz watch` or `npm bannz watch`
 
 **Choose creative to watch for changes and show in browser.**
 
@@ -35,12 +34,12 @@ _Dap to [@crigger](https://github.com/crigger) for the OG package this is based 
 - Add arg `--folder <creative name here>` to skip selection process and target specific ad.
 - Use `CTRL + C` to stop process.
 
-### bannz deploy
+### `yarn bannz deploy` or `npm bannz deploy`
 
 **Zip up vendor-ready files in `src/banners/` and output to `/dist` for sending along to vendor.**
 
 - Grabs only minified and otherwise necessary files before zip to cut file size down as much as possible.
 
-### bannz help
+### `yarn bannz -h` or `npm bannz -h`
 
 **See most of the above information in your terminal.**
